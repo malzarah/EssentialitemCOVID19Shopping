@@ -27,4 +27,4 @@ class usageForm(forms.ModelForm):
                                     empty_label="Select Item")
     class Meta:
         model=usage
-        fields=('usage_ID','usagePerc')
+        fields=('usage_ID','usagePerc','item')
