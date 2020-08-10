@@ -109,7 +109,7 @@ def store_new(request):
    else:
        form = storeForm()
        # print("Else")
-   return render(request, 'store_new.html', {'form': form})
+   return render(request, 'store-new.html', {'form': form})
 
 
 

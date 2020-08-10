@@ -12,9 +12,13 @@ class itemForm(forms.ModelForm):
 
 
 class storeForm(forms.ModelForm):
+    item = forms.ModelChoiceField(queryset=item.objects.all(),
+                                  to_field_name='itemName',
+                                  empty_label="Select Item")
+
     class Meta:
         model = store
-        fields = ('store_ID','store_NAME')
+        fields = ('store_ID','store_NAME','item')
 
 
 class usageForm(forms.ModelForm):
