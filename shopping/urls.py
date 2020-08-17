@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from shop import views
 
@@ -29,7 +29,7 @@ path('stores/<int:pk>/edit/', views.store_edit, name='store_edit'),
 path('items/<int:pk>/edit/', views.item_edit, name='item_edit'),
 path('usages/<int:pk>/edit/', views.usage_edit, name='usage_edit'),
 url('login/',auth_views.LoginView.as_view(), name='login'),
-
+path('accounts/', include('django.contrib.auth.urls')),
 path('items/create/', views.item_new, name='item_new'),
 path('stores/create/', views.store_new, name='store_new'),
 path('usage/create/', views.usage_new, name='usage_new'),
