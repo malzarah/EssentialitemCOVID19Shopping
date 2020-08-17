@@ -28,3 +28,7 @@ class usageForm(forms.ModelForm):
     class Meta:
         model=usage
         fields=('usage_ID','usagePerc','item')
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)
