@@ -135,6 +135,7 @@ def usage_new(request):
         form = usageForm(request.POST)
         if form.is_valid():
             service = form.save(commit=False)
+            service.item=1
 
             service.save()
             storeList = usage.objects.all()
